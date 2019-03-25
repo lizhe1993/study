@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title=title
+        link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+        style.
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        link(rel='stylesheet',href='/stylesheets/bootstrap-responsive.min.css')
+    body
+        div.navbar.navbar-fixed-top
+            div.navbar-inner
+                div.container
+                    a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.brand(href='/') Microblog
+                    div.nav-collapse
+                        ul.nav
+                            li.active
+                                a(href='/') 首页
+                            li
+                                a(href='/login') 登入
+                            li
+                                a(href='/reg') 注册
+        div#container.container
+            block content
+            hr
+            footer.
+                <p><a href='http://www.byvoid.com/' target='_blank'>BYVoid</a> 2012</p>
+
+    script(src='/javascripts/jquery-2.2.3.min.js')
+    script(src='/javascripts/bootstrap.min.js')

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--XML 配置文件 包含了对MyBatis 系统核心配置-->
+
+    <properties resource="jdbc.properties" />
+
+    <!--指定日志实现-->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="lazyLoadingEnabled" value="true" />
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driverClassName}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="com/esoft/mybatis/m/mapper/UserMapper.xml"/>
+        <mapper resource="com/esoft/mybatis/m/mapper/StudentMapper.xml"/>
+        <mapper resource="com/esoft/mybatis/m/mapper/ClazzMapper.xml"/>
+        <mapper resource="com/esoft/mybatis/m/mapper/CardMapper.xml"/>
+        <mapper resource="com/esoft/mybatis/m/mapper/PersonMapper.xml"/>
+    </mappers>
+</configuration>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.esoft.mybatis.m.d.ArticleMapper">
+
+
+    <select id="selectArticleByOrderId" parameterType="int" resultType="com.esoft.mybatis.m.Article">
+        SELECT * FROM tb_article WHERE id IN (SELECT article_id FROM tb_item WHERE order_id =#{id})
+    </select>
+
+
+
+</mapper>

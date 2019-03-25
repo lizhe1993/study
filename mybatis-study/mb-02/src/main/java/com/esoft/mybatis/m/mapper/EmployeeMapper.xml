@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.esoft.mybatis.m.d.EmployeeMapper">
+
+    <select id="selectEmployeeByIdLike" resultType="com.esoft.mybatis.m.Employee">
+        SELECT * FROM tb_employee WHERE state='ACTIVE'
+        <if test="id!=null">
+            AND id = #{id}
+        </if>
+    </select>
+
+    <select id="selectEmployByLoginLike" resultType="com.esoft.mybatis.m.Employee">
+        SELECT * FROM tb_employee WHERE state='ACTIVE'
+        <if test="username != null and password != null">
+            AND username=#{username} AND password=#{password}
+        </if>
+    </select>
+
+    <select id="selectEmployeeChoose" parameterType="hashmap" resultType="com.esoft.mybatis.m.Employee">
+        SELECT * FROM tb_employee WHERE state='ACTIVE'
+        <choose>
+            <when test="id !=null">
+                AND id=#{id}
+            </when>
+            <when test="username!=null and password !=null">
+                AND username =#{username} AND password=#{password}
+            </when>
+            <otherwise>
+                AND sex='男'
+            </otherwise>
+        </choose>
+    </select>
+
+    <select id="selectEmployeeLike" resultType="com.esoft.mybatis.m.Employee">
+        SELECT * FROM tb_employee
+        <where>
+            <if test="state != null">
+                state = #{state}
+            </if>
+            <if test="id !=null">
+                and id=#{id}
+            </if>
+            <if test="username!=null and password !=null">
+                and username=#{username} and password=#{password}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateEmployeeIfNecessary" parameterType="com.esoft.mybatis.m.Employee">
+        UPDATE tb_employee
+        <set>
+            <if test="username != null">username =#{name},</if>
+            <if test="password != null">password =#{password},</if>
+            <if test="sex != null">sex =#{sex},</if>
+            <if test="age != null">age =#{age},</if>
+            <if test="phone != null">phone =#{phone},</if>
+            <if test="sal != null">sal =#{sal},</if>
+            <if test="state != null">state =#{state}</if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <select id="selectEmployeeById" resultType="com.esoft.mybatis.m.Employee">
+        SELECT * FROM  tb_employee WHERE id=#{id}
+    </select>
+
+
+    <select id="selectEmployeeLikeName" resultType="com.esoft.mybatis.m.Employee">
+        <bind name="pattern" value="'%'+_parameter.getUsername()+'%'"/>
+        SELECT * FROM tb_employee WHERE username LIKE #{pattern}
+    </select>
+
+    <select id="selectEmployeeIn" resultType="com.esoft.mybatis.m.Employee">
+        SELECT * FROM tb_employee where id in
+        <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+</mapper>

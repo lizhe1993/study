@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.esoft.mybatis.m.mapper.UserMapper">
+    <insert id="save" parameterType="com.esoft.mybatis.m.User" useGeneratedKeys="true">
+        INSERT INTO tb_user(name,sex,age) VALUE (#{name},#{sex},#{age})
+    </insert>
+    
+    <select id="selectUserById" parameterType="int" resultType="com.esoft.mybatis.m.User">
+        SELECT * FROM  tb_user WHERE id=#{id}
+    </select>
+
+    <select id="selectUser" resultType="map">
+        SELECT * FROM tb_user;
+    </select>
+
+    <select id="selectUser1" resultType="com.esoft.mybatis.m.User">
+        SELECT * from tb_user;
+    </select>
+
+    <update id="updateUserById" parameterType="com.esoft.mybatis.m.User">
+        UPDATE tb_user SET  name=#{name},sex=#{sex},age=#{age} WHERE id=#{id}
+    </update>
+
+    <delete id="deleteUserById" parameterType="int">
+        DELETE FROM  tb_user WHERE  id=#{id}
+    </delete>
+
+</mapper>

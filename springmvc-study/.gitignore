@@ -1,0 +1,19 @@
+# Created by .ignore support plugin (hsz.mobi)
+/example06/src/main/resources/rebel.xml
+/example07/src/main/resources/rebel.xml
+.idea/
+example02/example-02.iml
+example02/target/
+example03/example03.iml
+example03/target/
+example04/example04.iml
+example04/target/
+example05/example05.iml
+example05/target/
+example06/example06.iml
+example06/target/
+example07/example07.iml
+
+example1/example-1.iml
+example1/target/
+spring-mvc.iml

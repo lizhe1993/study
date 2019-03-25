@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           ">
+    <!--扫描器-->
+    <context:component-scan base-package="com.esoft"/>
+
+    <!--mvc驱动-->
+    <mvc:annotation-driven conversion-service="conversionService" />
+    <!--参数绑定-->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="com.esoft.example.i.StringToDateConverter" >
+                    <property name="datePattern" value="yyyy-MM-dd"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <!--全局注册绑定参数-->
+    <!-- <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+         <property name="webBindingInitializer">
+             <bean class="com.esoft.example.i.DateBindInitializer"></bean>
+         </property>
+     </bean>-->
+
+    <!--数据格式化-->
+    <!--  <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+          <property name="formatters">
+              <list>
+                  <bean class="com.esoft.example.i.DateFormatter" c:_0="yyyy-MM-dd"></bean>
+              </list>
+          </property>
+      </bean>-->
+
+
+    <!--视图解析器-->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--前缀-->
+        <property name="prefix">
+            <value>/WEB-INF/content/</value>
+        </property>
+
+        <!--后缀-->
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+
+    </bean>
+
+</beans>

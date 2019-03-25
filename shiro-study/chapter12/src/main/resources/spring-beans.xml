@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    
+    <context:property-placeholder location="classpath*:jdbc.properties"/>
+    
+    <!--数据库连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--BaseDao-->
+    <bean id="baseDao" abstract="true">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="permissionDao" class="chapter12.dao.PermissionDaoImpl" parent="baseDao"/>
+    <bean id="roleDao" class="chapter12.dao.RoleDaoImpl" parent="baseDao" />
+    <bean id="userDao" class="chapter12.dao.UserDaoImpl" parent="baseDao"/>
+
+    <bean id="permissionService" class="chapter12.service.PermissionServiceImpl">
+        <property name="permissionDao" ref="permissionDao" />
+    </bean>
+
+    <bean id="roleService" class="chapter12.service.RoleServiceImpl">
+        <property name="roleDao" ref="roleDao" />
+    </bean>
+
+    <bean id="passwordHelper" class="chapter12.service.PasswordHelper">
+        <property name="algrithName" value="md5" />
+        <property name="hashlterations" value="2" />
+    </bean>
+
+    <bean id="userService" class="chapter12.service.UserServiceImpl">
+        <property name="userDao" ref="userDao" />
+        <property name="passwordHelper" ref="passwordHelper" />
+    </bean>
+
+
+</beans>

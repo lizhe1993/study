@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.esoft.mybatis.m.d.OrderMapper">
+
+    <resultMap id="orderResultMap" type="com.esoft.mybatis.m.Order">
+        <id property="id" column="oid" />
+        <result property="code" column="code" />
+        <result property="totle" column="totle" />
+        <association property="user" javaType="com.esoft.mybatis.m.User">
+            <id property="id" column="id" />
+            <result property="username" column="username" />
+            <result property="password" column="password" />
+            <result property="phone" column="phone" />
+            <result property="address" column="address" />
+        </association>
+        <collection property="articles" javaType="ArrayList" column="oid" ofType="com.esoft.mybatis.m.Article"
+            select="com.esoft.mybatis.m.d.ArticleMapper.selectArticleByOrderId" fetchType="lazy">
+            <id property="id" column="id" />
+            <result property="name" column="name" />
+            <result property="price" column="price" />
+            <result property="remark" column="remark" />
+        </collection>
+    </resultMap>
+    
+    
+    <select id="selectOrderById" parameterType="int" resultMap="orderResultMap">
+        SELECT u.* ,o.id as oid ,code,total,user_id FROM tb_user u,tb_order o WHERE u.id=o.user_id and o.id = #{id}
+    </select>
+    
+
+    <select id="selectOrderByUserId" parameterType="int" resultType="com.esoft.mybatis.m.Order">
+        SELECT *  FROM tb_order WHERE user_id = #{id}
+    </select>
+
+
+</mapper>

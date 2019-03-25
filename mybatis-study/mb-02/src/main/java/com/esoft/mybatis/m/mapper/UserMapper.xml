@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.esoft.mybatis.m.d.UserMapper">
+
+    <resultMap id="userResultMapper" type="com.esoft.mybatis.m.User">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="phone" column="phone"/>
+        <result property="address" column="address"/>
+        <collection property="orders" javaType="ArrayList"
+                    ofType="com.esoft.mybatis.m.Order" column="id"
+        select="com.esoft.mybatis.m.d.OrderMapper.selectOrderByUserId" fetchType="lazy"/>
+    </resultMap>
+
+    <select id="selectUserById" parameterType="int" resultMap="userResultMapper">
+        SELECT * FROM tb_user WHERE id=#{id}
+    </select>
+
+    <select id="selectUser" resultMap="userResultMapper">
+        SELECT * FROM tb_user
+    </select>
+
+
+</mapper>

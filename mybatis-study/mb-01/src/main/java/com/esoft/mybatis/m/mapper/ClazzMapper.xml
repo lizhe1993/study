@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.esoft.mybatis.d.ClazzMapper">
+
+    <resultMap id="clazzResultMap" type="com.esoft.mybatis.m.Clazz">
+        <id property="id" column="id" />
+        <result property="code" column="code"/>
+        <collection property="students" javaType="ArrayList" column="id"
+                    ofType="com.esoft.mybatis.m.Student"
+                    select="selectStudentWithId" fetchType="lazy"/>
+    </resultMap>
+
+    <select id="selectStudentWithId" resultType="com.esoft.mybatis.m.Student">
+        SELECT * FROM tb_student where clazz_id=#{id}
+    </select>
+
+    <select id="selectClazz" resultMap="clazzResultMap">
+        SELECT * FROM tb_clazz
+    </select>
+
+    <select id="selectClazzById" resultMap="clazzResultMap">
+        SELECT * FROM  tb_clazz WHERE  id =#{id}
+    </select>
+
+</mapper>
