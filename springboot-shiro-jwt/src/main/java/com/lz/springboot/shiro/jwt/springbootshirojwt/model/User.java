@@ -17,7 +17,7 @@ import java.io.Serializable;
 @ToString
 @Data
 @Entity
-@Table(name = "t_user")
+@Table(name = "t_user",uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
 public class User implements Serializable {
 
     @Id
@@ -27,4 +27,8 @@ public class User implements Serializable {
     private String username;
 
     private String password;
+
+    private String role;
+
+    private String permission;
 }

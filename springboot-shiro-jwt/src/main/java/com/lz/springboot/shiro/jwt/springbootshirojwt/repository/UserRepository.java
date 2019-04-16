@@ -15,6 +15,11 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-
-
+    /**
+     * 通过用户名称获取数据
+     *
+     * @param username
+     * @return
+     */
+    User getUserByUsername(String username);
 }

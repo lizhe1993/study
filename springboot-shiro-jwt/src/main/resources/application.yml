@@ -14,7 +14,7 @@ spring:
     password: shiro
     #程序启动后会初始化这些脚本文件
     #schema: classpath:db/schema.sql
-    data: calsspath:db/data.sql
+    data: classpath:db/data.sql
   h2:
     console:
       settings:
