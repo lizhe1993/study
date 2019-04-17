@@ -1,5 +1,6 @@
 package com.lz.springboot.shiro.jwt.springbootshirojwt.security;
 
+import com.google.common.collect.Sets;
 import com.lz.springboot.shiro.jwt.springbootshirojwt.model.User;
 import com.lz.springboot.shiro.jwt.springbootshirojwt.service.UserService;
 import com.lz.springboot.shiro.jwt.springbootshirojwt.util.JWTUtils;
@@ -54,8 +55,7 @@ public class MyRealm extends AuthorizingRealm {
         //验证信息
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         authorizationInfo.addRole(userInfo.getRole());
-        Set<String> permission = new HashSet<>(Arrays.asList(userInfo.getPermission().split(",")));
-        authorizationInfo.addStringPermissions(permission);
+        authorizationInfo.addStringPermissions(Sets.newHashSet(userInfo.getPermission().split(",")));
         return authorizationInfo;
     }
 
