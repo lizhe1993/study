@@ -3,6 +3,7 @@ package com.lz.springboot.shiro.jwt.springbootshirojwt.controller;
 import com.lz.springboot.shiro.jwt.springbootshirojwt.base.JsonResponse;
 import com.lz.springboot.shiro.jwt.springbootshirojwt.base.JsonResponseBuilder;
 import com.lz.springboot.shiro.jwt.springbootshirojwt.exception.UnauthorizedException;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.ShiroException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -21,19 +22,22 @@ import javax.servlet.http.HttpServletRequest;
  * 作者姓名           修改时间           版本号              描述
  */
 @RestControllerAdvice
+@Slf4j
 public class ExceptionController {
 
     // 捕捉shiro的异常
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(ShiroException.class)
     public JsonResponse handle401(ShiroException e) {
+        log.error("ShiroException exception :{}", e.getMessage());
         return JsonResponseBuilder.create(HttpStatus.UNAUTHORIZED, e.getMessage(), null);
     }
 
     // 捕捉UnauthorizedException
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(UnauthorizedException.class)
-    public JsonResponse handle401() {
+    public JsonResponse handle401(UnauthorizedException e) {
+        log.error("UnauthorizedException exception :{}", e.getMessage());
         return JsonResponseBuilder.create(HttpStatus.UNAUTHORIZED, "Unauthorized", null);
     }
 
@@ -41,6 +45,7 @@ public class ExceptionController {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public JsonResponse globalException(HttpServletRequest request, Throwable ex) {
+        log.error("globalException exception :{}", ex.getMessage());
         return JsonResponseBuilder.create(getStatus(request), ex.getMessage(), null);
     }
 

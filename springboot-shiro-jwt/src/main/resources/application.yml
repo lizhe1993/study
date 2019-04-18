@@ -7,13 +7,16 @@ server:
 # jdbc:h2:tcp://IP/database 通过远程连接的方式
 # jdbc:h2:mem:database 直接在内存中，程序只要重启就会消失
 spring:
+  application:
+    name: springboot-shiro-jwt
   datasource:
-    url: jdbc:h2:mem:shiro_study;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:shiro_study
     driver-class-name: org.h2.Driver
     username: shiro
     password: shiro
     #程序启动后会初始化这些脚本文件
-    #schema: classpath:db/schema.sql
+    initialization-mode: ALWAYS
+    schema: classpath:db/schema.sql
     data: classpath:db/data.sql
   h2:
     console:
@@ -26,12 +29,13 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     properties:
       hibernate:
         show_sql: true
-        use_sql_comments: true
-        format_sql: true
+        use_sql_comments: false
+        format_sql: false
+    generate-ddl: true
 
 logging:
   config: classpath:config/logback.xml
