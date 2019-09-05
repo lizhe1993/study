@@ -1,0 +1,9 @@
+server:
+  port: 6723
+
+spring:
+  rabbitmq:
+    host: 10.37.149.30
+    port: 5672
+    username: guest
+    password: guest
