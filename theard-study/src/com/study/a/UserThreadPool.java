@@ -1,4 +1,4 @@
-package com.study;
+package com.study.a;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;

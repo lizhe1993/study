@@ -1,4 +1,4 @@
-package com.study;
+package com.study.a;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
