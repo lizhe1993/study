@@ -19,7 +19,6 @@ public class CountDownLatchDemo implements Runnable {
     static final CountDownLatch end = new CountDownLatch(10);
     static final CountDownLatchDemo demo = new CountDownLatchDemo();
 
-    @Override
     public void run() {
         try {
             // 模拟检查
