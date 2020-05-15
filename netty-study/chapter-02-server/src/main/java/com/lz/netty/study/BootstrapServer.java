@@ -38,22 +38,17 @@ public class BootstrapServer {
         // 启动
         System.out.println("------启动端口 " + port + "-------");
         new BootstrapServer(port).start();
-        System.out.println("------启动成功------");
     }
 
     /**
      * 启动服务
      */
     public void start() throws InterruptedException {
-        // channel 类实例化
-        final EchoServerHandler handler = new EchoServerHandler();
         // 创建 event loop group - 这里使用了nio 传输 channel
-        EventLoopGroup group = new NioEventLoopGroup();
-
+        NioEventLoopGroup group = new NioEventLoopGroup();
         try {
             // 创建服务引导启动类
             ServerBootstrap bootstrap = new ServerBootstrap();
-
             bootstrap
                     // 绑定分组
                     .group(group)
@@ -66,19 +61,18 @@ public class BootstrapServer {
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
                             //EchoServerHandler 被标注为@Shareable，所以我们可以总是使用同样的实例
-                            ch.pipeline().addLast(handler);
+                            ch.pipeline().addLast(new EchoServerHandler());
                         }
                     });
             // 异步地绑定服务器；调用 sync()方法阻塞等待直到绑定完成
             ChannelFuture cf = bootstrap.bind().sync();
+            System.out.println(BootstrapServer.class.getName() + " started and listen on " + cf.channel().localAddress());
             // 获取Channel的CloseFuture，并且阻塞当前线程直到它完成
             cf.channel().closeFuture().sync();
         } finally {
             //关闭 EventLoopGroup，释放所有的资源
             group.shutdownGracefully().sync();
         }
-
-
     }
 
 }
