@@ -42,6 +42,7 @@ public class BootstrapClient {
         }
         String host = args[0];
         int port = Integer.parseInt(args[1]);
+        System.out.println("host->" + host + "，port->" + port);
         // 启动
         new BootstrapClient(host, port).start();
     }
@@ -61,7 +62,7 @@ public class BootstrapClient {
                     // 指定nio 传输 channel
                     .channel(NioSocketChannel.class)
                     // 使用指定的端口设置套接字地址-绑定本地地址端口
-                    .localAddress(new InetSocketAddress(host, port))
+                    .remoteAddress(new InetSocketAddress(host, port))
                     // 添加一个EchoServerHandler 到子Channel的 ChannelPipeline
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
@@ -71,7 +72,7 @@ public class BootstrapClient {
                         }
                     });
             // 异步地绑定服务器；调用 sync()方法阻塞等待直到绑定完成
-            ChannelFuture cf = bootstrap.bind().sync();
+            ChannelFuture cf = bootstrap.connect().sync();
             // 获取Channel的CloseFuture，并且阻塞当前线程直到它完成
             cf.channel().closeFuture().sync();
         } finally {
