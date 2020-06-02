@@ -11,6 +11,7 @@
     <modules>
         <module>chapter-02-server</module>
         <module>chapter-02-client</module>
+        <module>chapter-12-websocket</module>
     </modules>
 
     <build>
