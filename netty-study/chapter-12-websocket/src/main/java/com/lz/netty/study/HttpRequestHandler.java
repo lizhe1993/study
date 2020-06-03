@@ -5,7 +5,6 @@ import io.netty.handler.codec.http.*;
 import io.netty.handler.ssl.SslHandler;
 import io.netty.handler.stream.ChunkedNioFile;
 
-import javax.xml.ws.spi.http.HttpHandler;
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.net.URISyntaxException;
