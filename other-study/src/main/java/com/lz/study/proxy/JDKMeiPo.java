@@ -7,7 +7,6 @@ import java.lang.reflect.Proxy;
 /**
  * @ClassName: JDKMeiPo
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2020/4/21 17:20
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

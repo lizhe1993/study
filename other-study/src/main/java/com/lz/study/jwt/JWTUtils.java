@@ -18,7 +18,6 @@ import java.util.UUID;
 /**
  * ClassName: JWTUtils
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/1/9 15:26
  * History:
  * <author>          <time>          <version>          <desc>

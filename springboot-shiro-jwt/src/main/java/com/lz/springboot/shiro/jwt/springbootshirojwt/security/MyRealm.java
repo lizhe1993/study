@@ -23,7 +23,6 @@ import java.util.Set;
 /**
  * ClassName: MyRealm
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/16 17:07
  * History:
  * <author>          <time>          <version>          <desc>

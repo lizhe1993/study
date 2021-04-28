@@ -3,7 +3,6 @@ package com.study.a;
 /**
  * ClassName: DeadLockDemo
  * Description: 死锁demo
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/2/18 14:47
  * History:
  * <author>          <time>          <version>          <desc>

@@ -8,7 +8,6 @@ import org.apache.shiro.authc.AuthenticationToken;
 /**
  * ClassName: JWTToken
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/16 17:04
  * History:
  * <author>          <time>          <version>          <desc>

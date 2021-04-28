@@ -9,7 +9,6 @@ import java.util.concurrent.RecursiveTask;
 /**
  * @ClassName: ForkCountTask
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2019/10/21 9:57
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

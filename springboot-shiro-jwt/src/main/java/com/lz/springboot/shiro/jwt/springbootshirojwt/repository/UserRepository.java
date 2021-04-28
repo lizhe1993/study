@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 /**
  * ClassName: UserRepository
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/15 11:44
  * History:
  * <author>          <time>          <version>          <desc>

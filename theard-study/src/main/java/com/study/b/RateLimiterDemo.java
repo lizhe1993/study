@@ -5,7 +5,6 @@ import com.google.common.util.concurrent.RateLimiter;
 /**
  * @ClassName: RateLimiterDemo
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2019/10/19 10:40
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

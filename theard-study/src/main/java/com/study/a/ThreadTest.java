@@ -4,7 +4,6 @@ package com.study.a;
  * @author lz
  * ClassName: ThreadTest
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/1/2 18:08
  * History:
  * <author>          <time>          <version>          <desc>

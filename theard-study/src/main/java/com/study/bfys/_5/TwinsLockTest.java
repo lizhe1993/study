@@ -1,7 +1,7 @@
 package com.study.bfys._5;
 
 import com.study.bfys.utils.SleepUtils;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.concurrent.locks.Lock;
 

@@ -7,7 +7,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * ClassName: CountTest
  * Description: CAS 模拟计数器
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/2/18 16:58
  * History:
  * <author>          <time>          <version>          <desc>

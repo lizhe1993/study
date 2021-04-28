@@ -6,7 +6,6 @@ import java.util.Observer;
 /**
  * @ClassName: Teacher
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2020/4/22 16:59
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

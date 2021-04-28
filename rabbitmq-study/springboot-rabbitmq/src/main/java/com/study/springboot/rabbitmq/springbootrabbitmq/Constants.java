@@ -3,7 +3,6 @@ package com.study.springboot.rabbitmq.springbootrabbitmq;
 /**
  * ClassName: Constants
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/6/19 15:07
  * History:
  * <author>          <time>          <version>          <desc>

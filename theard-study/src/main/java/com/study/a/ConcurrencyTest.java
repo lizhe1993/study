@@ -3,7 +3,6 @@ package com.study.a;
 /**
  * ClassName: ConcurrencyTest
  * Description: 测试线程穿行和并行的时间
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/2/18 14:23
  * History:
  * <author>          <time>          <version>          <desc>

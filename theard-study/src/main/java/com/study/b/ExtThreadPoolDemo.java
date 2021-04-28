@@ -8,7 +8,6 @@ import java.util.concurrent.TimeUnit;
 /**
  * @ClassName: ExtThreadPoolDemo
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2019/10/19 17:28
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

@@ -13,7 +13,6 @@ import java.io.IOException;
 /**
  * ClassName: JWTFilter
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/17 13:36
  * History:
  * <author>          <time>          <version>          <desc>

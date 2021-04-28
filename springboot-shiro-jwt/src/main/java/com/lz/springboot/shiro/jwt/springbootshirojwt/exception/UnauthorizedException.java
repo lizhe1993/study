@@ -3,7 +3,6 @@ package com.lz.springboot.shiro.jwt.springbootshirojwt.exception;
 /**
  * ClassName: UnauthorizedException
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/16 14:01
  * History:
  * <author>          <time>          <version>          <desc>

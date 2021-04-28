@@ -7,7 +7,6 @@ import lombok.ToString;
 /**
  * ClassName: JsonResponse
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/16 13:53
  * History:
  * <author>          <time>          <version>          <desc>

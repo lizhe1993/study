@@ -6,7 +6,6 @@ import java.util.concurrent.TimeUnit;
 /**
  * @ClassName: CountDownLatchTest
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2019/8/26 17:24
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

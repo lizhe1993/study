@@ -6,7 +6,6 @@ import java.util.concurrent.*;
 /**
  * @ClassName: RejectThreadPoolDemo
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2019/10/19 16:14
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

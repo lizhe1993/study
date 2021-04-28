@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 /**
  * ClassName: JsonResponseBuilder
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/16 13:55
  * History:
  * <author>          <time>          <version>          <desc>

@@ -5,7 +5,6 @@ import com.lz.springboot.shiro.jwt.springbootshirojwt.model.User;
 /**
  * ClassName: UserService
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/16 11:37
  * History:
  * <author>          <time>          <version>          <desc>

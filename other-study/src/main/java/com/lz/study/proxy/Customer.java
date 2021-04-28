@@ -3,7 +3,6 @@ package com.lz.study.proxy;
 /**
  * @ClassName: Customer
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2020/4/21 17:19
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

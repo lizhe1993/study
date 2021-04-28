@@ -15,7 +15,6 @@ import java.net.InetSocketAddress;
 /**
  * @ClassName: Bootstrap
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2020/5/12 18:05
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

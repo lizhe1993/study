@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.*;
 /**
  * ClassName: WebController
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/16 16:44
  * History:
  * <author>          <time>          <version>          <desc>

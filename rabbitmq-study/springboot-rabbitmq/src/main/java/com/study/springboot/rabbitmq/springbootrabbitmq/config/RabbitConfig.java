@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
 /**
  * ClassName: RabbitConfig
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/6/19 15:06
  * History:
  * <author>          <time>          <version>          <desc>

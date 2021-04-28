@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 /**
  * ClassName: MongoDBTest
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/29 15:30
  * History:
  * <author>          <time>          <version>          <desc>

@@ -11,7 +11,6 @@ import io.jsonwebtoken.Claims;
 /**
  * ClassName: JWTStudy
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/1/9 14:56
  * History:
  * <author>          <time>          <version>          <desc>

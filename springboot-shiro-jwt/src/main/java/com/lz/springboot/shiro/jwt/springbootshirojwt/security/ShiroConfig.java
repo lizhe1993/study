@@ -19,7 +19,6 @@ import java.util.Map;
 /**
  * ClassName: ShiroConfig
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/17 15:26
  * History:
  * <author>          <time>          <version>          <desc>

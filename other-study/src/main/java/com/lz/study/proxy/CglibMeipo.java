@@ -9,7 +9,6 @@ import java.lang.reflect.Method;
 /**
  * @ClassName: CglibMeipo
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2020/4/22 11:14
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

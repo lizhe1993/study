@@ -15,7 +15,6 @@ import java.util.Date;
 /**
  * ClassName: JWTUtils
  * Description:
- * Author: LiZhe lizhej@enn.cn
  * Date: 2019/4/16 11:25
  * History:
  * <author>          <time>          <version>          <desc>

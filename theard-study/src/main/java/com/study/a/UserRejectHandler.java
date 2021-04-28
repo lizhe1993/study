@@ -6,7 +6,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * @ClassName: UserRejectHandler
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2019/9/3 11:23
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述

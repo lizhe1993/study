@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 /**
  * @ClassName: JMHSample_01_HelloWorld
  * @Description:
- * @Author: LiZhe lizhej@enn.cn
  * @Date: 2019/10/28 17:15
  * @History: <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
